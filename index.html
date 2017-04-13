@@ -83,7 +83,7 @@
         <div class="container">
             <div class="intro-text">    
                 <div class="intro-heading">Foresight</div>
-                <div class="intro-lead-in">More accurate Glaucoma detection via machine learning</div>
+                <div class="intro-lead-in">More accurate glaucoma detection via machine learning</div>
                 <a href="http://54.172.11.223:8080/" target="_blank" class="page-scroll btn btn-xl">View our demo</a>
             </div>
         </div>
@@ -196,73 +196,20 @@
                     <h3 class="section-subheading text-muted">Understanding how data on patient vision is structured</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Point #1</h4>
-                                    <h4 class="subheading">Lorem ipsum dolor sit amet</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Point #2</h4>
-                                    <h4 class="subheading">Lorem ipsum dolor sit amet</h4> 
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Point #3</h4>
-                                    <h4 class="subheading">Lorem ipsum dolor sit amet</h4> 
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Point #4</h4>
-                                    <h4 class="subheading">Lorem ipsum dolor sit amet</h4> 
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Free
-                                    <br>Text
-                                    <br>Here</h4>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="img/visual_field_clean.png" class="img-responsive img-square" alt="results">
+                    <p class="text-muted" > Visual field of right eye <br> (total deviation values shown)</p>
+                    <p class="text-muted" style = "font-size: 12px"><i> note: black rectangle represents blind spot </p></i>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="demo-heading" align="left">A visual field is the core data structure for our product </h4>
+                    <p class="text-muted" align="left">The visual field captures the results of patient's vision test at a particular visit in an eye-shaped matrix. The numbers represent a patient's sensitivity to light at 52-distinct points. Higher numbers represent stronger vision. There are three standard measures of vision on visual fields, which are included in our dataset:</p>
+                    <p class="text-muted" align="left">
+                    <li> <strong> Raw sensitivity: </strong> values of each tested point are listed in decibels in the sensitivity plot. Higher numbers mean the patient was able to see a more attenuated light, and thus has more sensitive vision at that location</li>
+                    <li> <strong> Total deviation: </strong> numbers are the deviations in sensitivity from the expected values for a specific age. It is useful to compare with age-matched normal thresholds as sensitivity normally decreases gradually with age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
+                    <li> <strong> Pattern deviation: </strong> shows discrepancies within a patient's visual field by correcting for generalized decreases in visual sensitivity. It is useful to show localized areas of sensitivity loss hidden within a field that is diffusely depressed. </li>
+                    </p>
                 </div>
             </div>
         </div>
@@ -287,11 +234,10 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/manifold.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/filtering.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Determining basis for Modeling</h4>
-                        <p class="text-muted">EDA</p>
+                        <h4>#1: Filtering the data</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -301,11 +247,10 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/manifold.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/template.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Generating labels</h4>
-                        <p class="text-muted">Training set preparation</p>
+                        <h4>#2: Exploring the data</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -318,8 +263,7 @@
                         <img src="img/portfolio/manifold.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Normalizing training set</h4>
-                        <p class="text-muted">Training set preparation</p>
+                        <h4>#3: Generating labels</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -332,8 +276,7 @@
                         <img src="img/portfolio/manifold.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Random Forest Model</h4>
-                        <p class="text-muted">Model Generation</p>
+                        <h4>#4: Normalizing the data</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -346,8 +289,7 @@
                         <img src="img/portfolio/manifold.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Logistic Regression</h4>
-                        <p class="text-muted">Model Generation</p>
+                        <h4>#5: Generating Models</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -357,11 +299,10 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/validation.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Neural Networks</h4>
-                        <p class="text-muted">Model Generation</p>
+                        <h4>#6: Expert validation</h4>
                     </div>
                 </div>
             </div>
@@ -369,7 +310,7 @@
     </section>
 
     <!-- Results Section -->
-    <section id="results">
+    <section id="results" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -395,7 +336,7 @@
 
 
     <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <section id="team">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -470,7 +411,7 @@
     </section>
 
     <!-- Advisors Section -->
-    <section id="advisors">
+    <section id="advisors" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
