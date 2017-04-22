@@ -573,11 +573,39 @@
                                 <img class="img-responsive img-centered" src="img/portfolio/exploring_data.png" alt="">
                                 <p align = left>Glaucoma is known to be a disease that is more prevalent in older patients and our data confirms this. As the histogram below shows, the prevalence of Glaucoma increases with age with the average age of the patient being 67 years. The fall off in the prevalence of glaucoma beyond the peak reflects possibly two trends - patients reaching the end of their life span before Glaucoma occurs and saturation of Glaucoma incidence in the Glaucoma susceptible population.
                                 </p>
+								<img class="img-responsive img-centered" src="img/portfolio/age_big.png" alt="">
                                 <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test. As expected, there is a correlation between the duration of the test and the age of the patients.
-                                <img class="img-responsive img-centered" src="img/portfolio/age_distribution.png" alt="">
-
                                 </p>
-                                
+                                <img class="img-responsive img-centered" src="img/portfolio/test.png" alt="">
+								<p align = left>As expected, there is a correlation between the duration of the test and the age of the patients.
+                                </p>
+                                <img class="img-responsive img-centered" src="img/portfolio/duration_vs_age.png" alt="">
+								<p align = left>The results provided by the HFA include false positive and false negative errors as well as both global indices and point wise measures. Some of them are:
+								<ul>
+                                <li align = left><b>Mean Deviation</b> (MD) a global index of the deviation away from age matched controls.  Patients without glaucoma have the MD close to zero with patients having Mean Deviation more negative than -10 dB classed as having advanced Glaucoma. As we can see from the relative picture, the majority of the patients had negative MD indicating Glaucoma vision loss.</li>
+                                <li align = left><b>Raw Sensitivity</b>, (point wise metric) values of each tested point are listed in decibels.</li>
+                                <li align = left><b>Total Deviation</b>, (point wise metric) that is the sensitivity deviation of each visual field compared to a benchmark for that specific age set. Patients without glaucoma have values close to zero.</li>
+                                <li align = left><b>Pattern Deviation</b>, is the total deviation reduced by uniformly across the visual field. The rationale is that this accounts for deficits in VFs caused by other reasons such as cataract, leaving the Glaucoma related deficit in place.</li>
+                                </ul>
+                                </p>
+								<img class="img-responsive img-centered" src="img/portfolio/md.png" alt="">
+								<img class="img-responsive img-centered" src="img/portfolio/sensitivity.png" alt="">
+								<img class="img-responsive img-centered" src="img/portfolio/td.png" alt="">
+								<img class="img-responsive img-centered" src="img/portfolio/ptd.png" alt="">
+								<p align = center><b>Spatial correlation</b></p>
+								<p align = left>The picture below, in the left side, shows the structure of the retinal nerve fibre bundles that are visible after a digital enhancement of a picture taken with a blue filter. In the right side, the same structure is manually highlighted in red. The retinal nerves transmit the visual information from the retina to the brain.
+                                </p>
+								<img class="img-responsive img-centered" src="img/portfolio/eye.png" alt="">
+								<p align = left>Overlapping the structure of the retinal nerves with the visual fields matrix, suggests a complex spatial correlation between the points.
+                                </p>
+								<img class="img-responsive img-centered" src="img/portfolio/vf-eye.png" alt="">
+								<p align = left>The following plots display the spatial correlation obtained by analyzing the correlation matrixes of the raw sensitivities, the total deviations and the pattern deviations. The 2 lines without data correspond to the position of the blind spot.
+                                </p>
+								<p align = center><b>Correlation matrix of the total deviations</b></p>
+								<img class="img-responsive img-centered" src="img/portfolio/corr_td.png" alt="">
+								<p align = center><b>Correlation matrix of the pattern deviations</b></p>
+								<img class="img-responsive img-centered" src="img/portfolio/corr_pd.png" alt="">
+								<p align = left>Visual field deficits in Glaucoma are caused by damage to the nerve fibers that conduct nerve impulses to the brain. The above described spatial correlations between VF points due to the complex nerve fiber structure transmitting data from the retina, result in patterns of visual field loss that cannot be summarized by a single metric. <u>This was the rationale for our decision to use point-wise data rather than a global index as the input to our classifiers.</u> A global index typically loses most of the spatial information encoded in the sensitivity of VF points.</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
@@ -646,12 +674,12 @@
                                 <p align = left>    
                                 We used 6 methods to define the status of the patient:
                                 <ul>
-                                <li align = left> AGIS Score - Advanced Glaucoma Intervention Study </li>
-                                <li align = left> CIGTS Score - Collaborative Initial Glaucoma Treatment Study </li>
-                                <li align = left> Mean Deviation - (provided by the HFA) </li>
-                                <li align = left> VFI index </li>
-                                <li align = left> PLR - Pointwise Linear Regression </li>
-                                <li align = left> PoPLR - Permutation of Pointwise Linear Regression </li>
+                                <li align = left><b> AGIS Score </b> - Advanced Glaucoma Intervention Study </li>
+                                <li align = left><b> CIGTS Score </b> - Collaborative Initial Glaucoma Treatment Study </li>
+                                <li align = left><b> Mean Deviation </b> - (provided by the HFA) </li>
+                                <li align = left><b> VFI index </b></li>
+                                <li align = left><b> PLR </b>- Pointwise Linear Regression </li>
+                                <li align = left><b> PoPLR </b>- Permutation of Pointwise Linear Regression </li>
                                 </ul>
                                 </p>
 
@@ -669,7 +697,26 @@
                                 <p align = left> 
                                 So we decided to use a voting system. The winning vote (progressing or stable) becomes the label for our classifier. We also have an “undecided” label for cases where there is an equal split amongst the six algorithms.
                                 </p>
-
+								<p align = left>
+								After the labeling we analyzed the data using a Principal Component Analysis and, how it’s clear from the following set of pictures, there is a big overlap between the stable and progressing patients. The first chart is created plotting the stable patients first, the second plotting the progressing first.
+								</p>
+								<p align = center>
+								<b>Chart plotting the stable patients first</b>
+								</p>
+								<img class="img-responsive img-centered" src="img/portfolio/pca1.png" alt="">
+								<p align = center>
+								<b>Chart plotting the progressing patients first</b>
+								</p>
+								<img class="img-responsive img-centered" src="img/portfolio/pca2.png" alt="">
+								<p align = left>The following chart presents the final result with the “undecided” patients.
+								</p>
+								<p align = center>
+								<b>Chart plotting the progressing patients first</b>
+								</p>
+								<img class="img-responsive img-centered" src="img/portfolio/pca3.png" alt="">
+								<p align = left>
+								And it’s clear that the undecided patients are those in the intersection between the 2 sets. It’s very complex to study the data using unsupervised clustering. In fact both group of patients are losing their sight, but the ones that are classified as “stable” are at a slower speed compared to the “progressing” ones. Basically it’s a human definition when a patient is progressing and when he is stable, in reality the 2 groups are continuously connected.
+								</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
@@ -696,13 +743,37 @@
                                 <!-- Project Details Go Here -->
                                 <h2>#6: Model Development</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/generating_models.png" alt="">
-                                <p align = left>Glaucoma is known to be a disease that is more prevalent in older patients and our data confirms this. As the histogram below shows, the prevalence of Glaucoma increases with age with the average age of the patient being 67 years. The fall off in the prevalence of glaucoma beyond the peak reflects possibly two trends - patients reaching the end of their life span before Glaucoma occurs and saturation of Glaucoma incidence in the Glaucoma susceptible population.
-                                </p>
-                                <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test. As expected, there is a correlation between the duration of the test and the age of the patients.
-                                <img class="img-responsive img-centered" src="img/portfolio/age_distribution.png" alt="">
-
-                                </p>
-                                
+                                <p align = left>We apply different classifiers to our dataset and in particular:
+								<ul>
+                                <li align = left><b> Logistic Regression </b></li>
+                                <li align = left><b> Random Forest </b> </li>
+                                <li align = left><b> Extreme Gradient Boosting </b></li>
+                                <li align = left><b> Support Vector Classifier </b></li>
+                                <li align = left><b> Vanilla Neural Network </b></li>
+                                <li align = left><b> Convolutional Neural Network </b></li>
+                                </ul>
+								</p>
+								<p align = left>
+								The structure of the <b>Neural Network </b> is described in the following table. To avoid overfitting we added 4 dropout layers with decreasing dropout probabilities, from 0.5 to 0.2. 
+								</p>
+                               <img class="img-responsive img-centered" src="img/portfolio/NN.png" alt="">
+								<p align = left>
+								We trained the Neural Network for 20,000 epochs, finding that more training didn’t improve the accuracy of the classifications. For our model we used Keras over Tensorflow and we noticed that the model loss on the validation set was smaller that the one one the training set. From the documentation of Keras, we found that this is a normal behaviour and it is given by the sum of two different effects:
+								<ul>
+                                <li align = left>1. During the calculation of the validation set, regularization mechanisms such as Dropout are turned off</li>
+                                <li align = left>2. The training loss is the average of the losses over each batch of training data. Because your model is changing over time, the loss over the first batches of an epoch is generally higher than over the last batches. On the other hand, the testing loss for an epoch is computed using the model as it is at the end of the epoch, resulting in a lower loss.</li>
+                                </ul>
+								</p>
+								<img class="img-responsive img-centered" src="img/portfolio/NN_training.png" alt="">
+                                <p align = left>
+								For the <b>Convolutional Neural Network</b> we had to rectify the shape of the matrix of the visual fields. We manipulated the data in the way described in the following picture, adding extra elements with 0 value:
+								</p>
+								<img class="img-responsive img-centered" src="img/portfolio/CNN_shape.png" alt="">
+								<p align = left>
+								The following table describe the structure of the classifier, that we trained for 300 epochs. More training didn't improve the capability of the network of correctly identify the patients. Also in this case we added some dropout layers to avoid overfitting. In particular the dropout probabilities were 0.2 for both layers.
+								</p>
+								<img class="img-responsive img-centered" src="img/portfolio/CNN.png" alt="">
+								<img class="img-responsive img-centered" src="img/portfolio/CNN_training.png" alt="">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
