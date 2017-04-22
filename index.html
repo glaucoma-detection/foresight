@@ -344,11 +344,11 @@
                     <h4 class="demo-heading" align="left">We focused on 2 key metrics to evaluate models</h4>
                     <li> <strong> F1 score: </strong> the harmonic mean of precision (what fraction of a predicted label is really that label) and recall (what fraction of a particular label is actually predicted). F1 scores are computed individually for each label ("progressing" and "stable") and we use the average of F1-score across both labels as the classifier score. We only used "progressing" and "stable" labels to ensure an apples-to-apples comparison with the ophthalmological measures for glaucoma (most of which only use these two labels.)</li>
                     <li> <strong> Class-Bias: </strong> The term class-bias in our case refers specifically to one form of the the term bias as used in machine learning literature (we call this ML-bias). In machine learning, bias (i.e. ML-bias) refers to any systematic deviation from the true model across many training sets. The bias we are referring to here reflects one type of ML-bias - the tendency of a classifier to overpredict one class or the other.
-<br>
+<br><br>
 Unless the class-bias is overwhelmingly in favor of one class, clearly demarcable cases tend to be predicted correctly despite class-bias. A good way to determine if there is any hidden class-bias is to look at the examples straddling the boundary between "progressing" and "stable". Class-bias (if any) in these cases cannot be ignored, since fully 1/3 of all eyes submitted to a human expert for labelling were classified as "boundary" eyes.
 <br>
 To ensure that our determination of hidden class-bias was statistically sound, we conducted a chi-squared analysis to determine if the distribution of predictions for the "boundary" eyes was significantly different from the distribution of the ground truth for eyes that had a clear demarcation. A large p-value implies no statistically significant difference in distributions, which indicates a balanced classifier. A small p value shows differences that are statistically significant, indicating that the classifier is biased.
-<br>
+<br><br>
 As the adjacent table shows, many of the ophthalmological indices had p values less than 0.05. This indicates that there was a very strong class-bias towards either the "progressing" or "stable" label irrespective of F1-scores. All of the machine learning classifiers on the other hand seem not to have class-bias. </p> </li><br>
 
                 </div>
