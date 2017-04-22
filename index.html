@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Foresight - Faster Glaucoma Detection</title>
+    <title>Foresight | Machine Learning-Powered Glaucoma Detection</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -65,6 +65,9 @@
                         <a class="page-scroll" href="#results">Results</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#nextsteps">Next Steps</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#team">Team</a>
                     </li>
                     <li>
@@ -83,7 +86,7 @@
         <div class="container">
             <div class="intro-text">    
                 <div class="intro-heading">Foresight</div>
-                <div class="intro-lead-in">Faster glaucoma detection via machine learning</div>
+                <div class="intro-lead-in">Machine learning-powered glaucoma detection</div>
                 <a href="http://54.172.11.223:8080/" target="_blank" class="page-scroll btn btn-xl">View our demo</a>
             </div>
         </div>
@@ -134,7 +137,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">However, today glaucoma detection is <br> uncertain and friction-filled</h2>
+                    <h2 class="section-heading">Today glaucoma detection is <br> uncertain and friction-filled</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
@@ -176,8 +179,6 @@
                     <p class="text-muted" align="left">Eliminate the clutter to help clinicians determine the right treatment strategy</p><br>
                     <h4 class="demo-heading" align="left">Put patient data in context</h4>
                     <p class="text-muted" align="left">Give clinicians confidence in recommendations by placing data in relation to patient history and peers</p>
-                    <br>
-                    <a href="http://54.172.11.223:8080/" target="_blank" class="page-scroll btn btn-xl">View our demo</a>
                 </div>
                 <div class="col-md-6">
                     <img src="img/web_app.png" class="img-responsive img-square" alt="results">
@@ -286,10 +287,10 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/implementing_algorithms.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/generating_labels_1.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>#5: Implementing algorithms</h4>
+                        <h4>#5: Label generation</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -299,49 +300,10 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/generating_labels_1.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>#6: Label generation</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
                         <img src="img/portfolio/generating_models.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>#7: Model development</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/validation-1.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>#8: Expert validation</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/web_app.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>#9: Web app creation</h4>
+                        <h4>#6: Model development</h4>
                     </div>
                 </div>
             </div>
@@ -382,13 +344,44 @@
                     <li> <strong> Bias: </strong> The bias of a classifier attempts to measure if a classifier has a tendency to overpredict one label over another. Unless the bias is overwhelmingly in favor of one class, clearly demarcable cases tend to be predicted correctly despite bias. The most accurate way to determine if there is any hidden bias is to look at the examples straddling the boundary between "progressing" and "stable". Bias (if any) in these cases cannot be ignored, since fully 1/3 of all eyes submitted to a human expert for labelling were classified as "boundary" eyes.  To ensure that our determination of hidden bias was statistically sound, we conducted a chi-squared analysis to determine if the distribution of predictions for the "boundary" eyes was significantly different from the distribution of the ground truth for eyes that had a clear demarcation. A large p-value implies no statistically significant  difference in distributions, which indicates a balanced classifier. A small p value shows differences that are statistically significant, indicating that the classifier is biased. As the adjacent table shows, both PLR and VFI had p values much less than 0.05. This indicates that there was a very strong bias towards the "progressing" label in VFI and PLR despite good F1-scores. All of the machine learning classifiers on the other hand seem to be unbiased. </li><br>
                 </div>
             </div>
+        <center><br>
+        <a href="http://54.172.11.223:8080/" target="_blank" class="page-scroll btn btn-xl">View our demo</a>
+        </div>
+        </center>
+    </section>
+
+
+    <!-- NextSteps Section -->
+    <section id="nextsteps">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Next Steps</h2>
+                    <h3 class="section-subheading text-muted">Taking our models to the next level</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="img/visual_field_clean.png" class="img-responsive img-square" alt="results">
+                    <p class="text-muted" > Visual field of right eye <br> (total deviation values shown)</p>
+                    <p class="text-muted" style = "font-size: 12px"><i> note: black rectangle represents blind spot </p></i>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="demo-heading" align="left">A visual field is the core data structure for our product </h4>
+                    <p class="text-muted" align="left">The visual field captures the results of patient's vision test at a particular visit in an eye-shaped matrix. The numbers represent a patient's sensitivity to light at 52-distinct points. Higher numbers represent stronger vision. There are three standard measures of vision on visual fields, which are included in our dataset:</p>
+                    <p class="text-muted" align="left">
+                    <li> <strong> Raw sensitivity: </strong> values of each tested point are listed in decibels in the sensitivity plot. Higher numbers mean the patient was able to see a more attenuated light, and thus has more sensitive vision at that location</li>
+                    <li> <strong> Total deviation: </strong> numbers are the deviations in sensitivity from the expected values for a specific age. It is useful to compare with age-matched normal thresholds as sensitivity normally decreases gradually with age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
+                    <li> <strong> Pattern deviation: </strong> shows discrepancies within a patient's visual field by correcting for generalized decreases in visual sensitivity. It is useful to show localized areas of sensitivity loss hidden within a field that is diffusely depressed. </li>
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
 
-
     <!-- Team Section -->
-    <section id="team">
+    <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -426,7 +419,7 @@
     </section>
 
     <!-- Advisors Section -->
-    <section id="advisors" class="bg-light-gray">
+    <section id="advisors">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -646,40 +639,7 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2>#5: Implementing Algorithms</h2>
-                                <img class="img-responsive img-centered" src="img/portfolio/implementing_algorithms.png" alt="">
-                                <p align = left>Glaucoma is known to be a disease that is more prevalent in older patients and our data confirms this. As the histogram below shows, the prevalence of Glaucoma increases with age with the average age of the patient being 67 years. The fall off in the prevalence of glaucoma beyond the peak reflects possibly two trends - patients reaching the end of their life span before Glaucoma occurs and saturation of Glaucoma incidence in the Glaucoma susceptible population.
-                                </p>
-                                <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test. As expected, there is a correlation between the duration of the test and the age of the patients.
-                                <img class="img-responsive img-centered" src="img/portfolio/age_distribution.png" alt="">
-
-                                </p>
-                                
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>#6: Label Generation</h2>
+                                <h2>#5: Label Generation</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/generating_labels_1.png" alt="">
                                 <p align = left>In order to apply a classifier to the dataset, we had to assign a label to every single eye of the patients who met our inclusion criteria (described previously). We used two labels: (1) Stable: vision in a specific eye of the patient is stable or not decreasing at a rate that is measurable (2) Progressing: the eye of the patient is measurably getting worse. </p>
 
@@ -719,8 +679,8 @@
         </div>
     </div>
  
-     <!-- Portfolio Modal 7 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+     <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -734,75 +694,8 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2>#7: Model Development</h2>
+                                <h2>#6: Model Development</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/generating_models.png" alt="">
-                                <p align = left>Glaucoma is known to be a disease that is more prevalent in older patients and our data confirms this. As the histogram below shows, the prevalence of Glaucoma increases with age with the average age of the patient being 67 years. The fall off in the prevalence of glaucoma beyond the peak reflects possibly two trends - patients reaching the end of their life span before Glaucoma occurs and saturation of Glaucoma incidence in the Glaucoma susceptible population.
-                                </p>
-                                <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test. As expected, there is a correlation between the duration of the test and the age of the patients.
-                                <img class="img-responsive img-centered" src="img/portfolio/age_distribution.png" alt="">
-
-                                </p>
-                                
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 8 -->
-
-    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>#8: Expert Validation</h2>
-                                <img class="img-responsive img-centered" src="img/portfolio/validation-1.png" alt="">
-                                <p align = left>Glaucoma is known to be a disease that is more prevalent in older patients and our data confirms this. As the histogram below shows, the prevalence of Glaucoma increases with age with the average age of the patient being 67 years. The fall off in the prevalence of glaucoma beyond the peak reflects possibly two trends - patients reaching the end of their life span before Glaucoma occurs and saturation of Glaucoma incidence in the Glaucoma susceptible population.
-                                </p>
-                                <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test. As expected, there is a correlation between the duration of the test and the age of the patients.
-                                <img class="img-responsive img-centered" src="img/portfolio/age_distribution.png" alt="">
-
-                                </p>
-                                
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <!-- Portfolio Modal 9 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>#9: Web App Development</h2>
-                                <img class="img-responsive img-centered" src="img/portfolio/web_app.jpg" alt="">
                                 <p align = left>Glaucoma is known to be a disease that is more prevalent in older patients and our data confirms this. As the histogram below shows, the prevalence of Glaucoma increases with age with the average age of the patient being 67 years. The fall off in the prevalence of glaucoma beyond the peak reflects possibly two trends - patients reaching the end of their life span before Glaucoma occurs and saturation of Glaucoma incidence in the Glaucoma susceptible population.
                                 </p>
                                 <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test. As expected, there is a correlation between the duration of the test and the age of the patients.
