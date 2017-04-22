@@ -152,7 +152,7 @@
                     <p class="text-muted" align="left">
                     <li> <strong> Test Variation: </strong> Visual field tests depend on patient responses to flashes of light. Patient fatigue, lack of focus, or learning effects can cause variation in the results independent of any change in vision </li>
                     <li> <strong> Lack of a "gold standard" metric: </strong> Researchers have developed a range of metrics for assessing patient vision. Some take all 54 points into account (e.g., mean deviation), others take a cluster approach (e.g., AGIS, CIGTS), while others focus on trends at the individual point level (e.g., point-wise linear regression). Research has shown that these measures can often disagree leaving clinicians to make a judgement call between them  </li>
-                    <li> <strong> Too much paper: </strong> Today clinicians line up paper printouts of visual field results to compare results over time and make assessments on pateient progression </li>
+                    <li> <strong> Too much paper: </strong> Today clinicians line up paper printouts of visual field results to compare results over time and make assessments on patient progression </li>
                     </p>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                     <p class="text-muted" align="left">
                     <li> <strong> Raw sensitivity: </strong> values of each tested point are listed in decibels in the sensitivity plot. Higher numbers mean the patient was able to see a more attenuated light, and thus has more sensitive vision at that location</li>
                     <li> <strong> Total deviation: </strong> numbers are the deviations in sensitivity from the expected values for a specific age. It is useful to compare with age-matched normal thresholds as sensitivity normally decreases gradually with age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
-                    <li> <strong> Pattern deviation: </strong> shows discrepancies within a patient's visual field by correcting for generalized decreases in visual sensitivity. It is useful to show localized areas of sensitivity loss hidden within a field that is diffusely depressed. </li>
+                    <li> <strong> Pattern deviation: </strong> shows discrepancies within a patient's visual field by correcting for generalized decreases in visual sensitivity. It is useful in cases where there is both localized depression due to Glaucoma, as well as globally depressed vision across the eye due to other pathologies such as cataracts. </li>
                     </p>
                 </div>
             </div>
@@ -324,24 +324,35 @@
                     <img src="img/results2.png" class="img-responsive img-square" style="vertical-align:bottom" alt="results">
                 </div>
                 <div class="col-md-6">
-                    <img src="img/biased_classifier.jpg" class="img-responsive img-square" style="vertical-align:bottom" alt="bias">
+                    <img src="img/class_biased_classifier.jpg" class="img-responsive img-square" style="vertical-align:bottom" alt="class-bias">
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-md-6">
+                    <br><br>
                     <h4 class="demo-heading" align="left">200 expert-labeled patients used to benchmark our models </h4>
                     <p class="text-muted" align="left">
                     <li> We provided an experienced glaucoma specialist with standard visual field data on 200 randomly-ordered patients (50 with a unanimous "stable" label, 50 with a unanimous "progressing" label, 100 where algorithms disagreed) </li>
                     <li> The glaucoma specialist was able to label 134 out of 200 patients as "progressing" or "stable". The remaining 66 were determined to be too close to call without additional clinical data </li><br>
 
-                    <h4 class="demo-heading" align="left">Foresight classifiers had precision and recall in line with leading clinical benchmarks with lower bias</h4>
+                    <h4 class="demo-heading" align="left">Foresight classifiers had precision and recall in line with leading clinical benchmarks with lower class-bias</h4>
                     <li><strong>Encouraging F1 scores: </strong> Our top 4 classifiers had F1 scores in line with leading research algorithms (i.e., 0.90 or above) </li>
-                    <li><strong>Lower bias: </strong> Our classifiers did not overpredict "progressing" on patients identified as "too close to call" by the glaucoma specialist, while VFI and PLR did. On the set of 66 "too close to call" patients -- PLR and VFI identified 63/66 (95%) and 59/66 (89%) patients as progressing, which suggests very strong bias in cases that were not clear even to human experts. </li>
+                    <li><strong>Lower Class-Bias: </strong> One of the tendencies that we noticed in ophthalmological measures of progression was the tendency to aggressively overpredict the "progressing" class. This can have negative consequences for patients because typical aggressive treatment involves surgery with serious side effects including permanent loss of some or all vision.
+<br><br>
+Our classifiers did not overpredict "progressing" on patients identified as "too close to call" by the glaucoma specialist, while VFI and PLR did. On the set of 66 "too close to call" patients -- PLR and VFI identified 63/66 (95%) and 59/66 (89%) patients as progressing, which suggests very strong tendency to overpredict in cases that were not clear even to human experts. </li>
                 </div>
                 <div class="col-md-6">    
+                    <br><br>
                     <h4 class="demo-heading" align="left">We focused on 2 key metrics to evaluate models</h4>
-                    <li> <strong> F1 score: </strong> the harmonic mean of precision (what fraction of a predicted label is really that label) and recall (what fraction of a particular label is actually predicted). F1 scores are computed individually for each label ("progressing" and "stable") and we use the average of F1-score across both labels as the classifier score. We only used "progressing" and "stable" labels to ensure an apples-to-apples comparison with the ophthalmological measures for glaucoma most of which only use these two labels.</li>
-                    <li> <strong> Bias: </strong> The bias of a classifier attempts to measure if a classifier has a tendency to overpredict one label over another. Unless the bias is overwhelmingly in favor of one class, clearly demarcable cases tend to be predicted correctly despite bias. The most accurate way to determine if there is any hidden bias is to look at the examples straddling the boundary between "progressing" and "stable". Bias (if any) in these cases cannot be ignored, since fully 1/3 of all eyes submitted to a human expert for labelling were classified as "boundary" eyes.  To ensure that our determination of hidden bias was statistically sound, we conducted a chi-squared analysis to determine if the distribution of predictions for the "boundary" eyes was significantly different from the distribution of the ground truth for eyes that had a clear demarcation. A large p-value implies no statistically significant  difference in distributions, which indicates a balanced classifier. A small p value shows differences that are statistically significant, indicating that the classifier is biased. As the adjacent table shows, both PLR and VFI had p values much less than 0.05. This indicates that there was a very strong bias towards the "progressing" label in VFI and PLR despite good F1-scores. All of the machine learning classifiers on the other hand seem to be unbiased. </li><br>
+                    <li> <strong> F1 score: </strong> the harmonic mean of precision (what fraction of a predicted label is really that label) and recall (what fraction of a particular label is actually predicted). F1 scores are computed individually for each label ("progressing" and "stable") and we use the average of F1-score across both labels as the classifier score. We only used "progressing" and "stable" labels to ensure an apples-to-apples comparison with the ophthalmological measures for glaucoma (most of which only use these two labels.)</li>
+                    <li> <strong> Class-Bias: </strong> The term class-bias in our case refers specifically to one form of the term bias as used in machine learning literature (we call this ML-bias). In machine learning, bias (i.e. ML-bias) refers to any systematic deviation from the true model across many training sets. The bias we are referring to here reflects one type of ML-bias - the tendency of a classifier to overpredict one class or the other.
+<br><br>
+Unless the class-bias is overwhelmingly in favor of one class, clearly demarcable cases tend to be predicted correctly despite class-bias. A good way to determine if there is any hidden class-bias is to look at the examples straddling the boundary between "progressing" and "stable". Class-bias (if any) in these cases cannot be ignored, since fully 1/3 of all eyes submitted to a human expert for labelling were classified as "boundary" eyes.
+<br><br>
+To ensure that our determination of hidden class-bias was statistically sound, we conducted a chi-squared analysis to determine if the distribution of predictions for the "boundary" eyes was significantly different from the distribution of the ground truth for eyes that had a clear demarcation. A large p-value implies no statistically significant difference in distributions, which indicates a balanced classifier. A small p value shows differences that are statistically significant, indicating that the classifier is biased.
+<br><br>
+As the adjacent table shows, many of the ophthalmological indices had p values less than 0.05. This indicates that there was a very strong class-bias towards either the "progressing" or "stable" label irrespective of F1-scores. All of the machine learning classifiers on the other hand seem not to have class-bias. </p> </li><br>
+
                 </div>
             </div>
         <center><br>
@@ -541,7 +552,7 @@
                                 <!-- Project Details Go Here -->
                                 <h2>#2: Data Filtering</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/filtering_graph.png" alt="">
-                                <p align = left>The initial dataset had 177,172 patients with 831,240 visual fields (VF) from 8 different institutions. We focused our analysis on the most commonly used methods, the SITA (see above) on  24-2 field measurement (which  measures 24 degrees temporally and 30 degrees nasally and tests 54 points spaced 2 degrees apart). The stimulus size was III and was white on a white background. These criteria were selected for us by our opthalomologist advisor as current best clinical practice.
+                                <p align = left>The initial dataset had 177,172 patients with 831,240 visual fields (VF) from 8 different institutions. We focused our analysis on the most commonly used methods, the SITA (see above) on  24-2 field measurement (which  measures 24 degrees temporally and 30 degrees nasally and tests 54 points spaced 2 degrees apart). The stimulus size was III (code for a particular standard size) and was white on a white background. These criteria were selected for us by our opthalomologist advisor as current best clinical practice.
                                 </p>
                                 <p align = left> From the raw data, we removed tests with high level of false positive (greater than 20%) and we kept only the VFs where there were at least 5 studies conducted on the same eye. The criteria for grouping studies was [patient-id, eye (OD or OS)]. OD is the medical term for the right eye and OS for the left eye. Thus each eye’s (left or right) studies were considered separate. After this filtering process, we ended up with a final dataset of 9,143 patients with 104,708 VFs.</p>
                                 
@@ -574,7 +585,7 @@
                                 <p align = left>Glaucoma is known to be a disease that is more prevalent in older patients and our data confirms this. As the histogram below shows, the prevalence of Glaucoma increases with age with the average age of the patient being 67 years. The fall off in the prevalence of glaucoma beyond the peak reflects possibly two trends - patients reaching the end of their life span before Glaucoma occurs and saturation of Glaucoma incidence in the Glaucoma susceptible population.
                                 </p>
 								<img class="img-responsive img-centered" src="img/portfolio/age_big.png" alt="">
-                                <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test. As expected, there is a correlation between the duration of the test and the age of the patients.
+                                <p align = left> The typical HFA test can be tedious for most subjects and this may result in errors (false positives or negatives) in patients. This situation can be exacerbated in older patients due to their age. The average duration of the test is more than 6 minutes, but higher rate of errors may prolong the test.
                                 </p>
                                 <img class="img-responsive img-centered" src="img/portfolio/test.png" alt="">
 								<p align = left>As expected, there is a correlation between the duration of the test and the age of the patients.
@@ -582,10 +593,10 @@
                                 <img class="img-responsive img-centered" src="img/portfolio/duration_vs_age.png" alt="">
 								<p align = left>The results provided by the HFA include false positive and false negative errors as well as both global indices and point wise measures. Some of them are:
 								<ul>
-                                <li align = left><b>Mean Deviation</b> (MD) a global index of the deviation away from age matched controls.  Patients without glaucoma have the MD close to zero with patients having Mean Deviation more negative than -10 dB classed as having advanced Glaucoma. As we can see from the relative picture, the majority of the patients had negative MD indicating Glaucoma vision loss.</li>
-                                <li align = left><b>Raw Sensitivity</b>, (point wise metric) values of each tested point are listed in decibels.</li>
-                                <li align = left><b>Total Deviation</b>, (point wise metric) that is the sensitivity deviation of each visual field compared to a benchmark for that specific age set. Patients without glaucoma have values close to zero.</li>
-                                <li align = left><b>Pattern Deviation</b>, is the total deviation reduced by uniformly across the visual field. The rationale is that this accounts for deficits in VFs caused by other reasons such as cataract, leaving the Glaucoma related deficit in place.</li>
+                                <li align = left><b>Mean Deviation</b> (MD) a global index of the deviation away from age matched controls.  Patients without glaucoma have MD values close to zero. Patients having Mean Deviation more negative than -10 dB are classed as having advanced Glaucoma. As we can see from the relative picture, the majority of the patients had negative MD indicating Glaucoma vision loss.</li>
+                                <li align = left><b>Raw Sensitivity</b>, (point wise metric) values of each tested point in decibels.</li>
+                                <li align = left><b>Total Deviation</b>, (point wise metric) this is the deviation of each point in the visual field compared to control subjects for that specific age set. Patients without glaucoma have values close to zero.</li>
+                                <li align = left><b>Pattern Deviation</b>, is the total deviation after reducing deviations uniformly across the visual field. The rationale is that this accounts for global deficits in VFs caused by other reasons such as cataract, leaving the typical localized Glaucoma related deficit in place.</li>
                                 </ul>
                                 </p>
 								<img class="img-responsive img-centered" src="img/portfolio/md.png" alt="">
@@ -593,7 +604,7 @@
 								<img class="img-responsive img-centered" src="img/portfolio/td.png" alt="">
 								<img class="img-responsive img-centered" src="img/portfolio/ptd.png" alt="">
 								<p align = center><b>Spatial correlation</b></p>
-								<p align = left>The picture below, in the left side, shows the structure of the retinal nerve fibre bundles that are visible after a digital enhancement of a picture taken with a blue filter. In the right side, the same structure is manually highlighted in red. The retinal nerves transmit the visual information from the retina to the brain.
+								<p align = left>The picture below, on the left side, shows the structure of the retinal nerve fibre bundles that are visible after a digital enhancement of a picture taken with a blue filter. In the right side, the same structure is manually highlighted in red. The retinal nerves transmit the visual information from the retina to the brain.
                                 </p>
 								<img class="img-responsive img-centered" src="img/portfolio/eye.png" alt="">
 								<p align = left>Overlapping the structure of the retinal nerves with the visual fields matrix, suggests a complex spatial correlation between the points.
@@ -605,7 +616,7 @@
 								<img class="img-responsive img-centered" src="img/portfolio/corr_td.png" alt="">
 								<p align = center><b>Correlation matrix of the pattern deviations</b></p>
 								<img class="img-responsive img-centered" src="img/portfolio/corr_pd.png" alt="">
-								<p align = left>Visual field deficits in Glaucoma are caused by damage to the nerve fibers that conduct nerve impulses to the brain. The above described spatial correlations between VF points due to the complex nerve fiber structure transmitting data from the retina, result in patterns of visual field loss that cannot be summarized by a single metric. <u>This was the rationale for our decision to use point-wise data rather than a global index as the input to our classifiers.</u> A global index typically loses most of the spatial information encoded in the sensitivity of VF points.</p>
+								<p align = left>Visual field deficits in Glaucoma are caused by damage to the nerve fibers that conduct nerve impulses to the brain. The above described complex spatial correlations between VF points result in patterns of visual field loss that cannot be summarized by a single metric. <u>This was the rationale for our decision to use point-wise data rather than a global index as the input to our classifiers.</u> A global index typically loses most of the spatial information encoded in the sensitivity of VF points.</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
@@ -633,15 +644,15 @@
                                 <h2>#4: Data Normalization</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/normalizing.png" alt="">
                                 <p align = left>Different patients have different number of visual fields, but for our machine learning models, we need to provide a fixed length input. 
-                                Moreover, there was a lot of variation in how far the visual fields are spaced apart. For one patient the fields may be 10 years apart, for another it may be 2 years apart. So we had to normalize the time dimension in our training dataset and to do that we explored a few different solutions:
+                                Moreover, there was a lot of variation in the temporal range of the VF recordings. For one patient the fields may be 10 years apart, for another it may be 2 years apart. So we had to normalize the time dimension in our training dataset and to do that we explored a few different solutions:
 
                                 <ul>
-                                <li align = left> We divided the visual fields for each patient into two groups and calculated the mean loss in sensitivity per point for each of these sets. We then divide the mean loss by the time spanned by the visual fields. We then took a delta between the two groups for each point in the visual field. </li>
-                                <li align = left> Like the previous but without dividing by the time </li>
-                                <li align = left> Instead of taking all the visual fields, we choose the first and the last two visual fields. </li>
+                                <li align = left> We divided the visual fields for each patient into two groups (first half and second half) and calculated the difference in pointwise means between the two groups. We then divide the delta (in pointwise means) by the time spanned by the visual fields.</li>
+                                <li align = left> Like the previous approach but without dividing by time </li>
+                                <li align = left> Instead of taking all the visual fields, we took the first and the last two visual fields. </li>
                                 </ul>
                                 
-                                <p align = left> The best approach for our classifiers was the second one.</p>
+                                <p align = left> The second approach gave us the best results with our classifiers.</p>
                                 
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
@@ -669,36 +680,36 @@
                                 <!-- Project Details Go Here -->
                                 <h2>#5: Label Generation</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/generating_labels_1.png" alt="">
-                                <p align = left>In order to apply a classifier to the dataset, we had to assign a label to every single eye of the patients who met our inclusion criteria (described previously). We used two labels: (1) Stable: vision in a specific eye of the patient is stable or not decreasing at a rate that is measurable (2) Progressing: the eye of the patient is measurably getting worse. </p>
+                                <p align = left>In order to apply a classifier to the dataset, we had to assign a label to every single eye of the patients who met our inclusion criteria (described previously). We used two labels: (1) Stable: vision in a specific eye of the patient is stable or not decreasing at a rate that is measurable (2) Progressing: the eye of the patient is measurably getting worse. Note that it is quite possible that the left eye of a patients has severe glaucoma while the right eye is disease free (or vice versa). Hence each eye (left or right) was considered separately as a single sample.</p>
 
                                 <p align = left>    
-                                We used 6 methods to define the status of the patient:
+                                We used 6 methods to determine the same metric - the progression of visual field loss (or lack thereof):
                                 <ul>
                                 <li align = left><b> AGIS Score </b> - Advanced Glaucoma Intervention Study </li>
                                 <li align = left><b> CIGTS Score </b> - Collaborative Initial Glaucoma Treatment Study </li>
                                 <li align = left><b> Mean Deviation </b> - (provided by the HFA) </li>
-                                <li align = left><b> VFI index </b></li>
+                                <li align = left><b> VFI index - calculated using an open source R package</b></li>
                                 <li align = left><b> PLR </b>- Pointwise Linear Regression </li>
                                 <li align = left><b> PoPLR </b>- Permutation of Pointwise Linear Regression </li>
                                 </ul>
                                 </p>
 
                                 <p align = left> 
-                                The first 4 algorithms evaluate the severity of vision loss in a patient (how bad is it ?). The last two algorithms measure “progression” of visual loss (how fast is it going bad ?)
+                                The first 4 algorithms evaluate the severity of vision loss in a patient (how bad is it ?). The last two algorithms measure “progression” of visual loss (is it getting worse with time.)
                                 Since the quantity we are actually interested in is progression i.e. is there a measurable rate of loss -  for the severity measures we compute rate of severity increase across multiple VF studies to get the progression. </p>
  
                                 <p align = left> 
-                                Following the indications of several papers and using the R package “visualFields” developed by Ivan Marin-Franch, we calculate the progression for every single eye in our dataset.
-                                One important finding from generating the labels is that the 6 different approaches result in 6 different verdicts, has detailed in the following table (an extract of the complete table that presents the 95% of the cases:
+                                None of these indices (Except MD) are readily available in the data to use. For the rest, we either implemented the algorithms ourselves (AGIS, CIGTS) or we used open source R packages (rest of the indices). The open source package we used was the R package “visualFields” developed by Ivan Marin-Franch.
+                                One important finding from generating the labels is that the 6 different approaches result in 6 different verdicts. The following table is an extract from the table we developed for all our 10,000 or so eyes.
                                 </p>
 
                                 <img class="img-responsive img-centered" src="img/portfolio/labels_table.png" alt="">
                                 
                                 <p align = left> 
-                                So we decided to use a voting system. The winning vote (progressing or stable) becomes the label for our classifier. We also have an “undecided” label for cases where there is an equal split amongst the six algorithms.
+                                For machine learning, we needed a singe label for each eye. So we decided to use a voting system. The winning vote (progressing or stable) became the training label for our classifier.
                                 </p>
 								<p align = left>
-								After the labeling we analyzed the data using a Principal Component Analysis and, how it’s clear from the following set of pictures, there is a big overlap between the stable and progressing patients. The first chart is created plotting the stable patients first, the second plotting the progressing first.
+								After the labeling we analyzed the data using a Principal Component Analysis and it’s clear from the following set of pictures that there are two distinct regions (one for stable and one for progressing) and then a big overlap between the two clusters. The first chart is created plotting the stable patients first, the second plotting the progressing first.
 								</p>
 								<p align = center>
 								<b>Chart plotting the stable patients first</b>
@@ -708,14 +719,11 @@
 								<b>Chart plotting the progressing patients first</b>
 								</p>
 								<img class="img-responsive img-centered" src="img/portfolio/pca2.png" alt="">
-								<p align = left>The following chart presents the final result with the “undecided” patients.
-								</p>
-								<p align = center>
-								<b>Chart plotting the progressing patients first</b>
+								<p align = left>The following chart presents the final result with the “boundary” patients i.e. patients who are neither measurably stable or measurably progressing.
 								</p>
 								<img class="img-responsive img-centered" src="img/portfolio/pca3.png" alt="">
 								<p align = left>
-								And it’s clear that the undecided patients are those in the intersection between the 2 sets. It’s very complex to study the data using unsupervised clustering. In fact both group of patients are losing their sight, but the ones that are classified as “stable” are at a slower speed compared to the “progressing” ones. Basically it’s a human definition when a patient is progressing and when he is stable, in reality the 2 groups are continuously connected.
+								From the figures it’s clear that the "boundary" patients are those in the intersection between the 2 sets. It’s very complex to study the data using unsupervised clustering. In fact both group of patients are losing their sight, but the ones that are classified as “stable” are losing it at a imprerciptible slower speed compared to the “progressing” ones. Basically it’s human perception that divides a patient into progressing or stable. In reality there exists a continuum between the two states and their overlap.
 								</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
@@ -743,7 +751,7 @@
                                 <!-- Project Details Go Here -->
                                 <h2>#6: Model Development</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/generating_models.png" alt="">
-                                <p align = left>We apply different classifiers to our dataset and in particular:
+                                <p align = left>We applied different classifiers to our dataset and in particular:
 								<ul>
                                 <li align = left><b> Logistic Regression </b></li>
                                 <li align = left><b> Random Forest </b> </li>
@@ -753,24 +761,31 @@
                                 <li align = left><b> Convolutional Neural Network </b></li>
                                 </ul>
 								</p>
+                                <p align = left>
+                                Our goal in modelling was not to come up with a perfect classifier for the proxy label we used (majority vote label). Our hypothesis instead was that the proxy label reflected a strong "true" signal corrupted by noise caused by our imperfect proxy label. We tuned our hyperparameters to deliberately underfit to the noisy label. The tuning was carried out by assuming that within each category of stable and progressing, there exists (given sufficient eyes) a normal distribution of eyes. We felt that 10,000 eyes was a sufficiently large population of eyes to give us a reasonably accurate normal distribution within each category. We then started fitting models to the training set using the simplest and least expressive model possible (for a random forest, the hyperparameter we used was maximum depth of the trees in the forest). We then increased the max-depth hyperparameter until we had a reasonably accurate normal distribution of eyes in each of the stable and progressing categories. In other words we chose the simplest model that resulted in a normal distribution of eyes in each class. By underfitting in this fashion, our hypothesis was that we would be picking out the hypothesized strong signal in the data (without being affected by the noise introduced by our proxy labels.)
+                                </p>
+
+                                <p align = left>
+                                In the rest of this section we discuss the challenges we faced in developing some of models, particularly convolutional neural networks.
+                                </p>>
 								<p align = left>
 								The structure of the <b>Neural Network </b> is described in the following table. To avoid overfitting we added 4 dropout layers with decreasing dropout probabilities, from 0.5 to 0.2. 
 								</p>
                                <img class="img-responsive img-centered" src="img/portfolio/NN.png" alt="">
 								<p align = left>
-								We trained the Neural Network for 20,000 epochs, finding that more training didn’t improve the accuracy of the classifications. For our model we used Keras over Tensorflow and we noticed that the model loss on the validation set was smaller that the one one the training set. From the documentation of Keras, we found that this is a normal behaviour and it is given by the sum of two different effects:
+								We trained the Neural Network for 20,000 epochs since we found that more training didn’t improve the accuracy of the classifications. For our model we used Keras with a Tensorflow backend and we noticed that the model loss on the validation set was smaller that the one one the training set. We believe we have a reasonable explanation for why this is so (the following is adapted from the Keras documentation):
 								<ul>
-                                <li align = left>1. During the calculation of the validation set, regularization mechanisms such as Dropout are turned off</li>
-                                <li align = left>2. The training loss is the average of the losses over each batch of training data. Because your model is changing over time, the loss over the first batches of an epoch is generally higher than over the last batches. On the other hand, the testing loss for an epoch is computed using the model as it is at the end of the epoch, resulting in a lower loss.</li>
+                                <li align = left>1. During the calculation of the validation set accuracy, regularization mechanisms such as Dropout are turned off</li>
+                                <li align = left>2. The training loss is the average of the losses over an epoch. Typically a model is worse at the start of an epoch compared to the end of an epoch. A model whose accuracy is the average accuracy across the epoch will typically fare worse than the (validation) accuracy measured at the end of the epoch (unless there is strong overfitting.)</li>
                                 </ul>
 								</p>
 								<img class="img-responsive img-centered" src="img/portfolio/NN_training.png" alt="">
                                 <p align = left>
-								For the <b>Convolutional Neural Network</b> we had to rectify the shape of the matrix of the visual fields. We manipulated the data in the way described in the following picture, adding extra elements with 0 value:
+								For the <b>Convolutional Neural Network</b> we had to rectify the shape of the matrix of the visual fields. We manipulated the data in the way described in the following picture, adding zero valued padding where needed:
 								</p>
 								<img class="img-responsive img-centered" src="img/portfolio/CNN_shape.png" alt="">
 								<p align = left>
-								The following table describe the structure of the classifier, that we trained for 300 epochs. More training didn't improve the capability of the network of correctly identify the patients. Also in this case we added some dropout layers to avoid overfitting. In particular the dropout probabilities were 0.2 for both layers.
+								The following table describe the structure of the classifier, that we trained for 300 epochs. More training didn't improve the capability of the network to correctly classify the patients. Also in this case we added some dropout layers to avoid overfitting. In particular the dropout probabilities were 0.2 for both layers.
 								</p>
 								<img class="img-responsive img-centered" src="img/portfolio/CNN.png" alt="">
 								<img class="img-responsive img-centered" src="img/portfolio/CNN_training.png" alt="">
