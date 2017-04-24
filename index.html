@@ -151,8 +151,13 @@
                     <p class="text-muted" align="left">3 key reasons complicate interpreting results to determine progression: </p>
                     <p class="text-muted" align="left">
                     <li> <strong> Test Variation: </strong> Visual field tests depend on patient responses to flashes of light. Patient fatigue, lack of focus, or learning effects can cause variation in the results independent of any change in vision </li>
+<<<<<<< HEAD
                     <li> <strong> Lack of a "gold standard" metric: </strong> Researchers have developed a range of metrics for assessing patient vision. Research has shown that these measures can often disagree leaving clinicians to make a judgement call between them  </li>
                     <li> <strong> Too manual: </strong> Today clinicians line up paper printouts of visual field results to compare results over time and make assessments on pateient progression </li>
+=======
+                    <li> <strong> Lack of a "gold standard" metric: </strong> Researchers have developed a range of metrics for assessing patient vision. Some take all 54 points into account (e.g., mean deviation), others take a cluster approach (e.g., AGIS, CIGTS), while others focus on trends at the individual point level (e.g., point-wise linear regression). Research has shown that these measures can often disagree leaving clinicians to make a judgement call between them  </li>
+                    <li> <strong> Too much paper: </strong> Today clinicians line up paper printouts of visual field results to compare results over time and make assessments on patient progression </li>
+>>>>>>> origin/gh-pages
                     </p>
                 </div>
             </div>
@@ -208,6 +213,7 @@
                     <p class="text-muted" align="left">Numbers in the eye-shaped matrix represent a patient's sensitivity to light at 54-distinct points. Higher numbers represent stronger vision. There are three standard metrics on visual fields, which are included in our dataset:</p>
                     <p class="text-muted" align="left">
                     <li> <strong> Raw sensitivity: </strong> values of each tested point are listed in decibels in the sensitivity plot. Higher numbers mean the patient was able to see a more attenuated light, and thus has more sensitive vision at that location</li>
+<<<<<<< HEAD
                     <li> <strong> Total deviation: </strong> values are deviations in sensitivity from the expected values for a specific age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
                     <li> <strong> Pattern deviation: </strong> total deviation values corrected for generalized decreases in visual sensitivity. It is useful in cases where there is both localized depression due to glaucoma, as well as globally depressed vision across the eye due to other pathologies such as cataracts. </li>
                     </p><br>
@@ -216,6 +222,11 @@
                     <li>Eyes from the Glaucoma Research Network visual field collection (831,240 fields from five sites without clinical data) were used </li>
                     <li>Dataset was filtered for patients with at least five reliable, SITA-Standard 24-2 fields resulting in 90,713 fields of 13,156 eyes included in the study.</li>
 
+=======
+                    <li> <strong> Total deviation: </strong> numbers are the deviations in sensitivity from the expected values for a specific age. It is useful to compare with age-matched normal thresholds as sensitivity normally decreases gradually with age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
+                    <li> <strong> Pattern deviation: </strong> shows discrepancies within a patient's visual field by correcting for generalized decreases in visual sensitivity. It is useful in cases where there is both localized depression due to Glaucoma, as well as globally depressed vision across the eye due to other pathologies such as cataracts. </li>
+                    </p>
+>>>>>>> origin/gh-pages
                 </div>
             </div>
         </div>
@@ -342,7 +353,7 @@
 
                     <h4 class="demo-heading" align="left">Foresight classifiers had precision and recall in line with leading clinical benchmarks with lower class-bias</h4>
                     <li><strong>Encouraging F1 scores: </strong> Our top 4 classifiers had F1 scores in line with leading research algorithms (i.e., 0.90 or above) </li>
-                    <li><strong>Lower Overpredictions: </strong> One of the tendencies that we noticed in ophthalmological measures of progression was the tendency to aggressively overpredict the "progressing" class. This can have negative consequences for patients because typical aggressive treatment involves surgery with serious side effects including permanent loss of some or all vision.
+                    <li><strong>Lower Class-Bias: </strong> One of the tendencies that we noticed in ophthalmological measures of progression was the tendency to aggressively overpredict the "progressing" class. This can have negative consequences for patients because typical aggressive treatment involves surgery with serious side effects including permanent loss of some or all vision.
 <br><br>
 Our classifiers did not overpredict "progressing" on patients identified as "too close to call" by the glaucoma specialist, while VFI and PLR did. On the set of 66 "too close to call" patients -- PLR and VFI identified 63/66 (95%) and 59/66 (89%) patients as progressing, which suggests very strong tendency to overpredict in cases that were not clear even to human experts. </li>
                 </div>
@@ -350,7 +361,7 @@ Our classifiers did not overpredict "progressing" on patients identified as "too
                     <br><br>
                     <h4 class="demo-heading" align="left">We focused on 2 key metrics to evaluate models</h4>
                     <li> <strong> F1 score: </strong> the harmonic mean of precision (what fraction of a predicted label is really that label) and recall (what fraction of a particular label is actually predicted). F1 scores are computed individually for each label ("progressing" and "stable") and we use the average of F1-score across both labels as the classifier score. We only used "progressing" and "stable" labels to ensure an apples-to-apples comparison with the ophthalmological measures for glaucoma (most of which only use these two labels.)</li>
-                    <li> <strong> Class-Bias: </strong> The term class-bias in our case refers specifically to one form of the the term bias as used in machine learning literature (we call this ML-bias). In machine learning, bias (i.e. ML-bias) refers to any systematic deviation from the true model across many training sets. The bias we are referring to here reflects one type of ML-bias - the tendency of a classifier to overpredict one class or the other.
+                    <li> <strong> Class-Bias: </strong> The term class-bias in our case refers specifically to one form of the term bias as used in machine learning literature (we call this ML-bias). In machine learning, bias (i.e. ML-bias) refers to any systematic deviation from the true model across many training sets. The bias we are referring to here reflects one type of ML-bias - the tendency of a classifier to overpredict one class or the other.
 <br><br>
 Unless the class-bias is overwhelmingly in favor of one class, clearly demarcable cases tend to be predicted correctly despite class-bias. A good way to determine if there is any hidden class-bias is to look at the examples straddling the boundary between "progressing" and "stable". Class-bias (if any) in these cases cannot be ignored, since fully 1/3 of all eyes submitted to a human expert for labelling were classified as "boundary" eyes.
 <br><br>
@@ -602,7 +613,7 @@ As the adjacent table shows, many of the ophthalmological indices had p values l
                                 <img class="img-responsive img-centered" src="img/portfolio/duration_vs_age.png" alt="">
 								<p align = left>The results provided by the HFA include false positive and false negative errors as well as both global indices and point wise measures. Some of them are:
 								<ul>
-                                <li align = left><b>Mean Deviation</b> (MD) a global index of the deviation away from age matched controls.  Patients without glaucoma have MD values close to zero. Patients having Mean Deviation more negative than -10 dB classed as having advanced Glaucoma. As we can see from the relative picture, the majority of the patients had negative MD indicating Glaucoma vision loss.</li>
+                                <li align = left><b>Mean Deviation</b> (MD) a global index of the deviation away from age matched controls.  Patients without glaucoma have MD values close to zero. Patients having Mean Deviation more negative than -10 dB are classed as having advanced Glaucoma. As we can see from the relative picture, the majority of the patients had negative MD indicating Glaucoma vision loss.</li>
                                 <li align = left><b>Raw Sensitivity</b>, (point wise metric) values of each tested point in decibels.</li>
                                 <li align = left><b>Total Deviation</b>, (point wise metric) this is the deviation of each point in the visual field compared to control subjects for that specific age set. Patients without glaucoma have values close to zero.</li>
                                 <li align = left><b>Pattern Deviation</b>, is the total deviation after reducing deviations uniformly across the visual field. The rationale is that this accounts for global deficits in VFs caused by other reasons such as cataract, leaving the typical localized Glaucoma related deficit in place.</li>
@@ -625,7 +636,7 @@ As the adjacent table shows, many of the ophthalmological indices had p values l
 								<img class="img-responsive img-centered" src="img/portfolio/corr_td.png" alt="">
 								<p align = center><b>Correlation matrix of the pattern deviations</b></p>
 								<img class="img-responsive img-centered" src="img/portfolio/corr_pd.png" alt="">
-								<p align = left>Visual field deficits in Glaucoma are caused by damage to the nerve fibers that conduct nerve impulses to the brain. The above described complex spatial correlations between VF points, result in patterns of visual field loss that cannot be summarized by a single metric. <u>This was the rationale for our decision to use point-wise data rather than a global index as the input to our classifiers.</u> A global index typically loses most of the spatial information encoded in the sensitivity of VF points.</p>
+								<p align = left>Visual field deficits in Glaucoma are caused by damage to the nerve fibers that conduct nerve impulses to the brain. The above described complex spatial correlations between VF points result in patterns of visual field loss that cannot be summarized by a single metric. <u>This was the rationale for our decision to use point-wise data rather than a global index as the input to our classifiers.</u> A global index typically loses most of the spatial information encoded in the sensitivity of VF points.</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
