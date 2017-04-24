@@ -147,12 +147,12 @@
                 </div>
                 <div class="col-md-6">
                     <h4 class="demo-heading" align="left">Is the patient's vision getting worse ("progressing")?</h4>
-                    <p class="text-muted" align="left"><a href = "http://www.eyerounds.org/tutorials/VF-testing/index.htm" target="_blank"> Visual field tests </a> that detect a patient's sensitivity to light at 54 distinct points are a critical factor in detecting and determining the right treatment strategy for glaucoma. </p>
-                    <p class="text-muted" align="left">Interpreting the results to determine if a patient's vision is, in fact, getting worse is challenging for 3 key reasons </p>
+                    <p class="text-muted" align="left"><a href = "http://www.eyerounds.org/tutorials/VF-testing/index.htm" target="_blank"> Visual field tests </a> that detect a patient's sensitivity to light at 54 distinct points are a critical factor in determining the right treatment strategy for glaucoma. </p>
+                    <p class="text-muted" align="left">3 key reasons complicate interpreting results to determine progression: </p>
                     <p class="text-muted" align="left">
                     <li> <strong> Test Variation: </strong> Visual field tests depend on patient responses to flashes of light. Patient fatigue, lack of focus, or learning effects can cause variation in the results independent of any change in vision </li>
-                    <li> <strong> Lack of a "gold standard" metric: </strong> Researchers have developed a range of metrics for assessing patient vision. Some take all 54 points into account (e.g., mean deviation), others take a cluster approach (e.g., AGIS, CIGTS), while others focus on trends at the individual point level (e.g., point-wise linear regression). Research has shown that these measures can often disagree leaving clinicians to make a judgement call between them  </li>
-                    <li> <strong> Too much paper: </strong> Today clinicians line up paper printouts of visual field results to compare results over time and make assessments on pateient progression </li>
+                    <li> <strong> Lack of a "gold standard" metric: </strong> Researchers have developed a range of metrics for assessing patient vision. Research has shown that these measures can often disagree leaving clinicians to make a judgement call between them  </li>
+                    <li> <strong> Too manual: </strong> Today clinicians line up paper printouts of visual field results to compare results over time and make assessments on pateient progression </li>
                     </p>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                 <div class="col-md-6">
                     <br>
                     <h4 class="demo-heading" align="left">More accurate detection</h4>
-                    <p class="text-muted" align="left">Leverage machine learning on 13K unique eyes across 7 leading US eye institutes</p><br>
+                    <p class="text-muted" align="left">Leverage machine learning on 13K unique eyes across 5 leading US eye institutes</p><br>
                     <h4 class="demo-heading" align="left">Streamlined data consumption</h4>
                     <p class="text-muted" align="left">Eliminate the clutter to help clinicians determine the right treatment strategy</p><br>
                     <h4 class="demo-heading" align="left">Put patient data in context</h4>
@@ -205,12 +205,17 @@
                 </div>
                 <div class="col-md-8">
                     <h4 class="demo-heading" align="left">A visual field is the core data structure for our product </h4>
-                    <p class="text-muted" align="left">The visual field captures the results of patient's vision test at a particular visit in an eye-shaped matrix. The numbers represent a patient's sensitivity to light at 52-distinct points. Higher numbers represent stronger vision. There are three standard measures of vision on visual fields, which are included in our dataset:</p>
+                    <p class="text-muted" align="left">Numbers in the eye-shaped matrix represent a patient's sensitivity to light at 54-distinct points. Higher numbers represent stronger vision. There are three standard metrics on visual fields, which are included in our dataset:</p>
                     <p class="text-muted" align="left">
                     <li> <strong> Raw sensitivity: </strong> values of each tested point are listed in decibels in the sensitivity plot. Higher numbers mean the patient was able to see a more attenuated light, and thus has more sensitive vision at that location</li>
-                    <li> <strong> Total deviation: </strong> numbers are the deviations in sensitivity from the expected values for a specific age. It is useful to compare with age-matched normal thresholds as sensitivity normally decreases gradually with age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
-                    <li> <strong> Pattern deviation: </strong> shows discrepancies within a patient's visual field by correcting for generalized decreases in visual sensitivity. It is useful in cases where there is both localized depression due to Glaucoma, as welll as globally depressed vision across the eye due to other pathologies such as cataracts. </li>
-                    </p>
+                    <li> <strong> Total deviation: </strong> values are deviations in sensitivity from the expected values for a specific age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
+                    <li> <strong> Pattern deviation: </strong> total deviation values corrected for generalized decreases in visual sensitivity. It is useful in cases where there is both localized depression due to glaucoma, as well as globally depressed vision across the eye due to other pathologies such as cataracts. </li>
+                    </p><br>
+                    <h4 class="demo-heading" align="left">Our dataset consists of 831K visual fields from 177K unique patients spanning 5 US-based eye institutes.</h4>
+                    <p class="text-muted" align="left">
+                    <li>Eyes from the Glaucoma Research Network visual field collection (831,240 fields from five sites without clinical data) were used </li>
+                    <li>Dataset was filtered for patients with at least five reliable, SITA-Standard 24-2 fields resulting in 90,713 fields of 13,156 eyes included in the study.</li>
+
                 </div>
             </div>
         </div>
@@ -321,10 +326,10 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-6">
-                    <img src="img/results2.png" class="img-responsive img-square" style="vertical-align:bottom" alt="results">
+                    <img src="img/results4.png" class="img-responsive img-square" style="vertical-align:bottom" alt="results">
                 </div>
                 <div class="col-md-6">
-                    <img src="img/class_biased_classifier.jpg" class="img-responsive img-square" style="vertical-align:bottom" alt="class-bias">
+                    <br><br><img src="img/class_biased_classifier.jpg" class="img-responsive img-square" style="vertical-align:bottom" alt="class-bias">
                 </div>
             </div>
             <div class="row text-center">
@@ -480,26 +485,8 @@ As the adjacent table shows, many of the ophthalmological indices had p values l
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <span class="copyright">Copyright &copy; Foresight 2017</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -525,7 +512,29 @@ As the adjacent table shows, many of the ophthalmological indices had p values l
                                 <!-- Project Details Go Here -->
                                 <h2>#1: User Research</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/user_research.png" alt="">
-                                <p align = left>TO BE COMPLETED.</p>
+                                <p align = left>In order to understand how to improve we glaucoma detection via machine learning, we interviewed five ophthalmologists and optometrists -- the target user of our product. </p>
+
+                                <p align = left> Our objectives for the interviews were to understand:
+                                <ul> 
+                                <li align = left> <strong> Current state detection processes: </strong> Each physician has her or his own personal "algorithm" for how to determine progression. We wanted to learn from these experience-based processes to inform our model development, but also identify potential points for improvement. </li>
+                                <li align = left> <strong> Pain points: </strong> Key frustrations opthalmologists and optometrists face today when trying to determine progression of glaucoma-suspect patients. </li>
+                                <li align = left> <strong> Concept feedback: </strong> Gathering unprompted and prompted reactions to paper prototypes of product concepts  </li>
+                                </ul>
+                                </p>
+
+                                <p align = left>Key learnings from the interviews included:
+                                <ul>
+                                <li align = left> <strong> Test variation is a key challenge: </strong> Visual field tests have a high degree of variance due to patient focus, technician skills and also a learning effect. All of these complicate the ability to get a clear picture of progression </li>
+                                <li align = left> <strong> Primarily manual, paper-based process: </strong> Determining progression today is a very manual process. Clinicians typically line up print-outs from visual field machines and manually look for patterns. Electronic Medical Record (EMR) systems are starting to make in-roads but are primarily digitization of existing paper than real leaps forward in any analytics</li>
+                                <li align = left> <strong> Clinicians want the raw data: </strong> Due to test variability and lack of gold standard metrics, clinicians grown accustomed to looking at the raw data to sanity check the results of existing algorithms. Making raw data easily available is important for securing a clinician's trust </li>
+                                <li align = left> <strong> Advanced algorithm have limited adoption today: </strong> While clinicians are aware of progression algorithms from recent, large research studies (e.g., AGIS, CIGTS), they are not well understood and rarely used clincially as they require extensive, manual calculations. Instead, clinicians tend to stick with the methods they learned during their training</li>
+                                <li align = left> <strong> Greyscale images of eye are important for patient education: </strong> Clincians regularly use greyscale images to help patients understand their diagnosis and progression. Patient education is important ensure treatment adherence and attendance at follow-up visits  </li>
+                                </ul>                                
+                                 </p>
+
+                                <p align = left>The next steps for user research would include testing our web-based prototype with clincians and expanding our research to include patients to test for success in enabling patient education. </p> 
+
+
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
@@ -552,9 +561,9 @@ As the adjacent table shows, many of the ophthalmological indices had p values l
                                 <!-- Project Details Go Here -->
                                 <h2>#2: Data Filtering</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/filtering_graph.png" alt="">
-                                <p align = left>The initial dataset had 177,172 patients with 831,240 visual fields (VF) from 8 different institutions. We focused our analysis on the most commonly used methods, the SITA (see above) on  24-2 field measurement (which  measures 24 degrees temporally and 30 degrees nasally and tests 54 points spaced 2 degrees apart). The stimulus size was III (code for a particular standard size) and was white on a white background. These criteria were selected for us by our opthalomologist advisor as current best clinical practice.
+                                <p align = left>The initial dataset had 177,172 patients with 831,240 visual fields (VF) from 5 different institutions. We focused our analysis on the most commonly used methods, the SITA (see above) on  24-2 field measurement (which measures 24 degrees temporally and 30 degrees nasally and tests 54 points spaced 2 degrees apart). The stimulus size was III (code for a particular standard size) and was white on a white background. These criteria were selected for us by our opthalomologist advisor as current best clinical practice.
                                 </p>
-                                <p align = left> From the raw data, we removed tests with high level of false positive (greater than 20%) and we kept only the VFs where there were at least 5 studies conducted on the same eye. The criteria for grouping studies was [patient-id, eye (OD or OS)]. OD is the medical term for the right eye and OS for the left eye. Thus each eye’s (left or right) studies were considered separate. After this filtering process, we ended up with a final dataset of 9,143 patients with 104,708 VFs.</p>
+                                <p align = left> From the raw data, we removed tests with high level of false positive (greater than 20%) and we kept only the VFs where there were at least 5 studies conducted on the same eye. The criteria for grouping studies was [patient-id, eye (OD or OS)]. OD is the medical term for the right eye and OS for the left eye. Thus each eye’s (left or right) studies were considered separate. After this filtering process, we ended up with a final dataset of 90,713 visual fields of 13,156 eyes included in the study.</p>
                                 
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
