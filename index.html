@@ -373,7 +373,7 @@
                         <img src="img/portfolio/filtering_graph.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Classifier Strengths</h4>
+                        <h4>CLF. Strengths (Click for Details)</h4>
                     </div>
                 </div>
                  <div class="col-md-4 col-md-offset-1 portfolio-item">
@@ -386,7 +386,7 @@
                         <img src="img/portfolio/filtering_graph.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Classifier Metrics</h4>
+                        <h4>CLF. Metrics (Click for Details)</h4>
                     </div>
                 </div>
             </div>
@@ -886,8 +886,6 @@
                         <img class="img-responsive img-centered" src="img/class_biased_classifier.jpg"  alt="">
 
                         <p align = left>
-                            <strong> F1 score: </strong> the harmonic mean of precision (what fraction of a predicted label is really that label) and recall (what fraction of a particular label
-                            <br><br>
                             <strong> Class-Bias: </strong> The term class-bias in our case refers specifically to one form of the term bias as used in machine learning literature. In machine learning, bias (i.e. ML-bias) refers to any systematic deviation from the true model across many training sets. The bias we are referring to here (class-bias) is the tendency of a classifier to overpredict one class or the other.
                         </p>
                                 
@@ -897,6 +895,9 @@
                             To ensure that our determination of hidden class-bias was statistically sound, we conducted a chi-squared analysis to determine if the distribution of predictions for the "boundary" eyes was significantly different from the distribution of the ground truth for eyes that had a clear demarcation. A large p-value implies no statistically significant difference in distributions, which indicates a balanced classifier. A small p value shows differences that are statistically significant, indicating that the classifier is biased.
                             <br><br>
                             Many of the ophthalmological indices had p values less than 0.05. This indicates that there was a very strong class-bias towards either the "progressing" or "stable" label irrespective of F1-scores. All of the machine learning classifiers on the other hand seem not to have class-bias.
+                        </p>
+                        <p align = left>
+                        <strong> F1 score: </strong> the harmonic mean of precision (what fraction of a predicted label is really that label) and recall (what fraction of a particular label
                         </p>
                         <br>    
                         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
