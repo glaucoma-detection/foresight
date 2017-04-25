@@ -1,7 +1,11 @@
-.black {
+.black, .navbar-custom .navbar-nav>.active>a.black {
     color: black;
 }
 
 .header-overlay {
     background-color: rgba(0,0,0,0.4);
+}
+
+.text-primary, a {
+    color: #b58c00
 }
