@@ -89,7 +89,7 @@
                 <div class="intro-text">
                     <div class="intro-heading">Foresight</div>
                     <div class="intro-lead-in">Machine learning-powered glaucoma detection</div>
-                    <a href="http://54.172.11.223:8080/" target="_blank" class="page-scroll btn btn-xl black">View our demo</a>
+                    <a href=" http://54.172.11.223:8080" target="_blank" class="page-scroll btn btn-xl black">View demo</a>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                     </span>
                     <h4 class="service-heading">$2.5B in annual <br> US healthcare spend</h4>
                     <p class="text-muted">Glaucoma testing and treatment drives <br> 10M physician visits in the US each year</p>
-                </div>                
+                </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -226,7 +226,7 @@
 
     <!-- Research & Analysis Grid Section -->
     <!-- See below for in the "Portfolio Modals" Section for editing the 'on-click' content -->
-    <section id="portfolio">
+    <section class="portfolio-container">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -349,7 +349,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-6">    
+                <div class="col-md-6">
                     <h4 class="demo-heading"><strong>Foresight classifiers have good F1 scores with lower class-bias</strong></h4>
                     <li><strong>Encouraging F1 scores: </strong> Our top 4 classifiers had F1 scores in line with leading research algorithms (i.e., 0.90 or above) </li>
                     <li><strong>Lower Class-Bias: </strong> Our classifiers did not overpredict "progressing" on patients identified as "too close to call" by the glaucoma specialist, while VFI and PLR did.</li>
@@ -361,44 +361,109 @@
 
                 </div>
             </div>
-<
-            <div class="row text-center">
-                <div class="col-md-4 col-md-offset-1 portfolio-item">
-                    <a href="#portfolioResults1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
+
+            <div class="portfolio-container margin-top20">
+                <div class="row text-center">
+                    <div class="col-md-6 col-md-offset-1 portfolio-item">
+                        <a href="#portfolioResults1" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
                             </div>
+                            <img src="img/portfolio/filtering_graph.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>CLF. Strengths (Click for Details)</h4>
                         </div>
-                        <img src="img/portfolio/filtering_graph.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>CLF. Strengths (Click for Details)</h4>
                     </div>
-                </div>
-                 <div class="col-md-4 col-md-offset-1 portfolio-item">
-                    <a href="#portfolioResults2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
+                     <div class="col-md-6 col-md-offset-1 portfolio-item">
+                        <a href="#portfolioResults2" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
                             </div>
+                            <img src="img/portfolio/filtering_graph.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>CLF. Metrics (Click for Details)</h4>
                         </div>
-                        <img src="img/portfolio/filtering_graph.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>CLF. Metrics (Click for Details)</h4>
                     </div>
                 </div>
             </div>
         <center><br>
-        <a href="http://54.172.11.223:8080/" target="_blank" class="page-scroll btn btn-xl black">View our demo</a>
+        <a href=" http://54.172.11.223:8080" target="_blank" class="page-scroll btn btn-xl black">View demo</a>
         </center>
         </div>
     </section>
 
 
+    <!-- Second Approach Section -->
+    <section id="second-approach">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Second Approach</h2>
+
+                    <h3 class="section-subheading text-muted">Using *just* the 134 labeled eyes</h3>
+                </div>
+            </div>
+            <div class="row larger">
+                <div class="col-md-5">
+                    <div class="portfolio-container margin-top20">
+                        <div class="row text-center">
+                            <div class="portfolio-item">
+                                <a href="#portfolioSecondApproach" class="portfolio-link second-approach" data-toggle="modal">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content">
+                                            <i class="fa fa-plus fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <img src="img/combinations.png" class="img-responsive" alt="">
+                                </a>
+                                <h5>Click to see mean F1-scores and Standard Deviation</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+
+                    <h4>Can we use just the 134 labeled eyes to build a classifier?</h4>
+                    <div class="list-item">Yes! We explored Support Vector Classifier (SVC), Random Forest and K Nearest Neighbots. We used 5-fold cross validation repeated over 1000 iterations to come up with an unbiased estimate of how well the model is doing.</div>
+                    <div class="list-item">Our best model is a <b>SVC</b> that uses just the 52 pattern deviation values and age to achieve a mean F1 score of <b>0.94</b></div>
+
+                    <h4 class="margin-top20">How can we avoid overfitting</h4>
+                    <div class="list-item">Given the size of the dataset, overfitting was a concern. To address this problem, we
+                        generated synthetic data.
+                    </div>
+                    <div class="list-item">The figure on the left shows a patient with six visual fields. We anchor the first two fields and drop fields three and four to create a synthetic data point, assuming that the final classification of stable / progressing
+                        still stands.
+                    By subsampling the visual fields of a patient we are able to <i>generate more than 2300 points
+                        using only the 134 eyes.</i> And we got an even better average F1 score of <span class="large-and-green">0.95</span>.
+                        We expect this model to generalize better to unseen data.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <div class="container bottom60">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Web App</h2>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="img/web_app_architecture.png" class="img-responsive center-block" alt="" width="900px">
+                <a href=" http://54.172.11.223:8080" target="_blank" class="page-scroll btn btn-xl black">View demo</a>
+            </div>
+        </div>
+
+
     <!-- NextSteps Section -->
-    <section id="nextsteps">
+    <section id="nextsteps" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -406,20 +471,12 @@
                     <h3 class="section-subheading text-muted">Taking our models to the next level</h3>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <img src="img/visual_field_clean.png" class="img-responsive img-square" alt="results">
-                    <p class="text-muted" > Visual field of right eye <br> (total deviation values shown)</p>
-                    <p class="text-muted" style = "font-size: 12px"><i> note: black rectangle represents blind spot </p></i>
-                </div>
-                <div class="col-md-8">
-                    <h4 class="demo-heading" align="left">A visual field is the core data structure for our product </h4>
-                    <p class="text-muted" align="left">The visual field captures the results of patient's vision test at a particular visit in an eye-shaped matrix. The numbers represent a patient's sensitivity to light at 52-distinct points. Higher numbers represent stronger vision. There are three standard measures of vision on visual fields, which are included in our dataset:</p>
-                    <p class="text-muted" align="left">
-                    <li> <strong> Raw sensitivity: </strong> values of each tested point are listed in decibels in the sensitivity plot. Higher numbers mean the patient was able to see a more attenuated light, and thus has more sensitive vision at that location</li>
-                    <li> <strong> Total deviation: </strong> numbers are the deviations in sensitivity from the expected values for a specific age. It is useful to compare with age-matched normal thresholds as sensitivity normally decreases gradually with age. Positive values represent areas of the field where the patient can see dimmer stimuli than the average individual of that age. Negative values represent decreased sensitivity from normal. </li>
-                    <li> <strong> Pattern deviation: </strong> shows discrepancies within a patient's visual field by correcting for generalized decreases in visual sensitivity. It is useful to show localized areas of sensitivity loss hidden within a field that is diffusely depressed. </li>
-                    </p>
+            <div class="row text-center larger">
+                <div class="col-md-8 col-md-offset-2">
+                    <li>Abstracts for some of the work we shared today have been submitted to the American Academy of Ophthalmology. We will continue working with our advisors.</li>
+                    <li>We hope to take our models to the next level by labeling a larger portion of our dataset and exploring
+                        the two approaches further.</li>
+                        <li>We hope to apply the synthetic data approach to early detection of glaucoma progression.</li>
                 </div>
             </div>
         </div>
@@ -427,7 +484,7 @@
 
 
     <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <section id="team">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -465,7 +522,7 @@
     </section>
 
     <!-- Advisors Section -->
-    <section id="advisors">
+    <section id="advisors" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -545,7 +602,7 @@
                                 <p align = left>In order to understand how to improve we glaucoma detection via machine learning, we interviewed five ophthalmologists and optometrists -- the target user of our product. </p>
 
                                 <p align = left> Our objectives for the interviews were to understand:
-                                <ul> 
+                                <ul>
                                 <li align = left> <strong> Current state detection processes: </strong> Each physician has her or his own personal "algorithm" for how to determine progression. We wanted to learn from these experience-based processes to inform our model development, but also identify potential points for improvement. </li>
                                 <li align = left> <strong> Pain points: </strong> Key frustrations opthalmologists and optometrists face today when trying to determine progression of glaucoma-suspect patients. </li>
                                 <li align = left> <strong> Concept feedback: </strong> Gathering unprompted and prompted reactions to paper prototypes of product concepts  </li>
@@ -559,10 +616,10 @@
                                 <li align = left> <strong> Clinicians want the raw data: </strong> Due to test variability and lack of gold standard metrics, clinicians grown accustomed to looking at the raw data to sanity check the results of existing algorithms. Making raw data easily available is important for securing a clinician's trust </li>
                                 <li align = left> <strong> Advanced algorithm have limited adoption today: </strong> While clinicians are aware of progression algorithms from recent, large research studies (e.g., AGIS, CIGTS), they are not well understood and rarely used clincially as they require extensive, manual calculations. Instead, clinicians tend to stick with the methods they learned during their training</li>
                                 <li align = left> <strong> Greyscale images of eye are important for patient education: </strong> Clincians regularly use greyscale images to help patients understand their diagnosis and progression. Patient education is important ensure treatment adherence and attendance at follow-up visits  </li>
-                                </ul>                                
+                                </ul>
                                  </p>
 
-                                <p align = left>The next steps for user research would include testing our web-based prototype with clincians and expanding our research to include patients to test for success in enabling patient education. </p> 
+                                <p align = left>The next steps for user research would include testing our web-based prototype with clincians and expanding our research to include patients to test for success in enabling patient education. </p>
 
 
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
@@ -594,7 +651,7 @@
                                 <p align = left>The initial dataset had 177,172 patients with 831,240 visual fields (VF) from 5 different institutions. We focused our analysis on the most commonly used methods, the SITA (see above) on  24-2 field measurement (which measures 24 degrees temporally and 30 degrees nasally and tests 54 points spaced 2 degrees apart). The stimulus size was III (code for a particular standard size) and was white on a white background. These criteria were selected for us by our opthalomologist advisor as current best clinical practice.
                                 </p>
                                 <p align = left> From the raw data, we removed tests with high level of false positive (greater than 20%) and we kept only the VFs where there were at least 5 studies conducted on the same eye. The criteria for grouping studies was [patient-id, eye (OD or OS)]. OD is the medical term for the right eye and OS for the left eye. Thus each eye’s (left or right) studies were considered separate. After this filtering process, we ended up with a final dataset of 90,713 visual fields of 13,156 eyes included in the study.</p>
-                                
+
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
@@ -682,7 +739,7 @@
                                 <!-- Project Details Go Here -->
                                 <h2>#4: Data Normalization</h2>
                                 <img class="img-responsive img-centered" src="img/portfolio/normalizing.png" alt="">
-                                <p align = left>Different patients have different number of visual fields, but for our machine learning models, we need to provide a fixed length input. 
+                                <p align = left>Different patients have different number of visual fields, but for our machine learning models, we need to provide a fixed length input.
                                 Moreover, there was a lot of variation in the temporal range of the VF recordings. For one patient the fields may be 10 years apart, for another it may be 2 years apart. So we had to normalize the time dimension in our training dataset and to do that we explored a few different solutions:
 
                                 <ul>
@@ -690,9 +747,9 @@
                                 <li align = left> Like the previous approach but without dividing by time </li>
                                 <li align = left> Instead of taking all the visual fields, we took the first and the last two visual fields. </li>
                                 </ul>
-                                
+
                                 <p align = left> The second approach gave us the best results with our classifiers.</p>
-                                
+
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                             </div>
                         </div>
@@ -721,7 +778,7 @@
                                 <img class="img-responsive img-centered" src="img/portfolio/generating_labels_1.png" alt="">
                                 <p align = left>In order to apply a classifier to the dataset, we had to assign a label to every single eye of the patients who met our inclusion criteria (described previously). We used two labels: (1) Stable: vision in a specific eye of the patient is stable or not decreasing at a rate that is measurable (2) Progressing: the eye of the patient is measurably getting worse. Note that it is quite possible that the left eye of a patients has severe glaucoma while the right eye is disease free (or vice versa). Hence each eye (left or right) was considered separately as a single sample.</p>
 
-                                <p align = left>    
+                                <p align = left>
                                 We used 6 methods to determine the same metric - the progression of visual field loss (or lack thereof):
                                 <ul>
                                 <li align = left><b> AGIS Score </b> - Advanced Glaucoma Intervention Study </li>
@@ -733,18 +790,18 @@
                                 </ul>
                                 </p>
 
-                                <p align = left> 
+                                <p align = left>
                                 The first 4 algorithms evaluate the severity of vision loss in a patient (how bad is it ?). The last two algorithms measure “progression” of visual loss (is it getting worse with time.)
                                 Since the quantity we are actually interested in is progression i.e. is there a measurable rate of loss -  for the severity measures we compute rate of severity increase across multiple VF studies to get the progression. </p>
- 
-                                <p align = left> 
+
+                                <p align = left>
                                 None of these indices (Except MD) are readily available in the data to use. For the rest, we either implemented the algorithms ourselves (AGIS, CIGTS) or we used open source R packages (rest of the indices). The open source package we used was the R package “visualFields” developed by Ivan Marin-Franch.
                                 One important finding from generating the labels is that the 6 different approaches result in 6 different verdicts. The following table is an extract from the table we developed for all our 10,000 or so eyes.
                                 </p>
 
                                 <img class="img-responsive img-centered" src="img/portfolio/labels_table.png" alt="">
-                                
-                                <p align = left> 
+
+                                <p align = left>
                                 For machine learning, we needed a singe label for each eye. So we decided to use a voting system. The winning vote (progressing or stable) became the training label for our classifier.
                                 </p>
 								<p align = left>
@@ -772,7 +829,7 @@
             </div>
         </div>
     </div>
- 
+
      <!-- Portfolio Modal 6 -->
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -808,7 +865,7 @@
                                 In the rest of this section we discuss the challenges we faced in developing some of models, particularly convolutional neural networks.
                                 </p>>
 								<p align = left>
-								The structure of the <b>Neural Network </b> is described in the following table. To avoid overfitting we added 4 dropout layers with decreasing dropout probabilities, from 0.5 to 0.2. 
+								The structure of the <b>Neural Network </b> is described in the following table. To avoid overfitting we added 4 dropout layers with decreasing dropout probabilities, from 0.5 to 0.2.
 								</p>
                                <img class="img-responsive img-centered" src="img/portfolio/NN.png" alt="">
 								<p align = left>
@@ -838,7 +895,7 @@
     </div>
 
 
-    
+
      <!-- Portfolio Modal Results 1 -->
 
     <div class="portfolio-modal modal fade" id="portfolioResults1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -855,13 +912,13 @@
 
                         <h2><strong>Classifier Strengths</strong></h2>
                         <img class="img-responsive img-centered" src="img/f1-score.jpg" alt="">
-                                
+
                         <p align = left>
                             <strong>Encouraging F1 scores: </strong> Our top 4 classifiers had F1 scores in line with leading research algorithms (i.e., 0.90 or above)
                             <br><br>
                             <strong>Lower Class-Bias: </strong> Our classifiers did not overpredict "progressing" on patients identified as "too close to call" by the glaucoma specialist, while VFI and PLR did. On the set of 66 "too close to call" patients -- PLR and VFI identified 63/66 (95%) and 59/66 (89%) patients as progressing, which suggests very strong tendency to overpredict in cases that were not clear even to human experts.
-                        </p>                        
-                        <br>    
+                        </p>
+                        <br>
                         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                     </div>
                 </div>
@@ -888,8 +945,8 @@
                         <p align = left>
                             <strong> Class-Bias: </strong> The term class-bias in our case refers specifically to one form of the term bias as used in machine learning literature. In machine learning, bias (i.e. ML-bias) refers to any systematic deviation from the true model across many training sets. The bias we are referring to here (class-bias) is the tendency of a classifier to overpredict one class or the other.
                         </p>
-                                
-                        <p align = left> Unless the class-bias is overwhelmingly in favor of one class, clearly demarcable cases tend to be predicted correctly despite class-bias. A good way to   
+
+                        <p align = left> Unless the class-bias is overwhelmingly in favor of one class, clearly demarcable cases tend to be predicted correctly despite class-bias. A good way to
                             determine if there is any hidden class-bias is to look at the examples straddling the boundary between "progressing" and "stable". Class-bias (if any) in these cases cannot be ignored, since fully 1/3 of all eyes submitted to a human expert for labelling were classified as "boundary" eyes.
                             <br><br>
                             To ensure that our determination of hidden class-bias was statistically sound, we conducted a chi-squared analysis to determine if the distribution of predictions for the "boundary" eyes was significantly different from the distribution of the ground truth for eyes that had a clear demarcation. A large p-value implies no statistically significant difference in distributions, which indicates a balanced classifier. A small p value shows differences that are statistically significant, indicating that the classifier is biased.
@@ -899,8 +956,30 @@
                         <p align = left>
                         <strong> F1 score: </strong> the harmonic mean of precision (what fraction of a predicted label is really that label) and recall (what fraction of a particular label is actually predicted).
                         </p>
-                        <br>    
+                        <br>
                         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Second Approach -->
+    <div class="portfolio-modal modal fade" id="portfolioSecondApproach" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="modal-body">
+                        <!-- Project Details Go Here -->
+                        <img class="img-responsive img-centered" src="img/second-approach-results.png"  alt="">
+                        <br>
+                        <button type="button" class="btn btn-primary black" data-dismiss="modal"><i class="fa fa-times"></i> Back to Main Page</button>
                     </div>
                 </div>
             </div>

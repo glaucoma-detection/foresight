@@ -9,3 +9,29 @@
 a.text-link {
     color: #b58c00
 }
+
+.margin-top20 {
+    margin-top: 20px;
+}
+
+.larger {
+    font-size: larger;
+}
+
+.list-item {
+    margin-bottom: 10px;
+}
+
+.large-and-green {
+    font-size: 30px;
+    font-weight: 300;
+    color: #02CCBA;
+}
+
+.portfolio-container .portfolio-item .portfolio-link.second-approach {
+    max-width:500px;
+}
+
+.bottom60 {
+    margin-bottom: 60px;
+}
